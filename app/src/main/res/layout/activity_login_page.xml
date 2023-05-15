@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <ImageView
+        android:id="@+id/bg1"
+        android:layout_width="wrap_content"
+        android:layout_height="290dp"
+        android:background="@drawable/img"
+        />
+
+
+
+    <TextView
+
+        android:textColor="@color/black"
+        android:layout_marginTop="300dp"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textStyle="bold"
+        android:textSize="20pt"
+        android:gravity="center"
+
+
+        />
+
+
+    <EditText
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:id="@+id/username"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:padding="8dp"
+        android:background="#f8d88b" />
+
+    <EditText
+        android:id="@+id/password"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:layout_width="match_parent"
+        android:inputType="textPassword"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/username"
+        android:layout_alignEnd="@+id/username"
+        android:padding="8dp"
+        android:background="#f8d88b"
+        android:hint="Password"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/username" />
+
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password"
+        android:layout_alignStart="@+id/password"
+        android:layout_alignEnd="@+id/password"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="-4dp"
+
+        android:text="Login" />
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Or using "
+        android:layout_below="@+id/loginButton"
+        android:layout_alignStart="@+id/loginButton"
+        android:layout_alignEnd="@+id/loginButton"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:id="@+id/tvLoginOption"
+        android:textSize="15dp"
+        />
+
+    <ImageView
+        android:id="@+id/googleLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvLoginOption"
+        android:layout_marginTop="20dp"
+
+        android:layout_alignStart="@+id/tvLoginOption"
+        android:layout_alignEnd="@+id/tvLoginOption"
+
+        android:src="@drawable/googleg_standard_color_18" />
+
+    </RelativeLayout>
+</ScrollView>

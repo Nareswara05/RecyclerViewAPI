@@ -1,21 +1,23 @@
 package com.example.recyclerview;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyViewHolder> implements OndataChanged {
+public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyViewHolder> {
 
     private Context context;
     private List<EPLTeamModel> listDataEPLTeams;
@@ -33,15 +35,50 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
             tvphone = view.findViewById(R.id.tvphone);
             tvdate = view.findViewById(R.id.tvdate);
             img = view.findViewById(R.id.ivLogoTeams);
+
+
+
+
+
+
+
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Listener.onContactSelected(listDataEPLTeams.get(getAdapterPosition()));
                 }
+
+
             });
+
+
+            view.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    if (Listener != null){
+                        int pos = getAdapterPosition();
+
+                        if (pos != RecyclerView.NO_POSITION){
+                            Listener.onItemLongClick(pos);
+                        }
+                    }
+
+
+
+
+                    return true;
+                }
+
+            });
+
+
+
+
 
         }
     }
+
+
 
 
 
@@ -73,6 +110,9 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
 
 
 
+
+
+
     @Override
     public int getItemCount() {
         return this.listDataEPLTeams.size();
@@ -80,6 +120,8 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
 
     public  interface ContactsAdapterListener{
         void onContactSelected(EPLTeamModel Contact);
+        void onItemLongClick(int position);
+
     }
 
 }

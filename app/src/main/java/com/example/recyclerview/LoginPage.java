@@ -12,7 +12,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -105,7 +104,7 @@ public class LoginPage extends AppCompatActivity {
                                         editor.putString(PASSWORD_KEY, "");
 
                                         editor.apply();
-                                        startActivity(new Intent(LoginPage.this, ListContactNameActivity.class));
+                                        navigateToSecondActivity();
                                         finish();
                                     }else{
                                         Toast.makeText(LoginPage.this, message, Toast.LENGTH_SHORT).show();
@@ -162,7 +161,7 @@ public class LoginPage extends AppCompatActivity {
 
     void navigateToSecondActivity(){
         finish();
-        Intent intent = new Intent(LoginPage.this, ListContactNameActivity.class);
+        Intent intent = new Intent(LoginPage.this, ListFilmNameActivity.class);
         startActivity(intent);
     }
 }

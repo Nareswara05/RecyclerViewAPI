@@ -1,28 +1,25 @@
 package com.example.recyclerview;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyViewHolder> {
+public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.MyViewHolder> {
 
     private Context context;
-    private List<EPLTeamModel> listDataEPLTeams;
+    private List<MovieModel> listDataMovie;
 
-    private ContactsAdapterListener Listener;
+    private MovieAdapterListener Listener;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView tvname, tvphone, tvdate;
@@ -45,7 +42,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Listener.onContactSelected(listDataEPLTeams.get(getAdapterPosition()));
+                    Listener.onContactSelected(listDataMovie.get(getAdapterPosition()));
                 }
 
 
@@ -82,15 +79,15 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
 
 
 
-    public ContactsAdapter(Context context, List<EPLTeamModel> contactList, ContactsAdapterListener Listener) {
+    public FilmAdapter(Context context, List<MovieModel> contactList, MovieAdapterListener Listener) {
         this.context = context;
-        this.listDataEPLTeams = contactList;
+        this.listDataMovie = contactList;
         this.Listener = Listener;
     }
 
     @NonNull
     @Override
-    public ContactsAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public FilmAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_layout, parent, false);
 
@@ -98,12 +95,13 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ContactsAdapter.MyViewHolder holder, int position) {
-        final EPLTeamModel contact = this.listDataEPLTeams.get(position);
+    public void onBindViewHolder(@NonNull FilmAdapter.MyViewHolder holder, int position) {
+        final MovieModel contact = this.listDataMovie.get(position);
 
-        holder.tvname.setText(contact.getTeamName());
-        holder.tvphone.setText(contact.getStadiun());
-        Glide.with(holder.itemView.getContext()).load(contact.getStrTeamBadge()).into(holder.img);
+        holder.tvname.setText(contact.getMovieName());
+        holder.tvphone.setText(contact.getReleaseDate());
+        Glide.with(holder.itemView.getContext()).load("https://image.tmdb.org/t/p/w500"+contact.getPosterPath()).into(holder.img);
+
 
 
     }
@@ -115,11 +113,11 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return this.listDataEPLTeams.size();
+        return this.listDataMovie.size();
     }
 
-    public  interface ContactsAdapterListener{
-        void onContactSelected(EPLTeamModel Contact);
+    public  interface MovieAdapterListener {
+        void onContactSelected(MovieModel Contact);
         void onItemLongClick(int position);
 
     }

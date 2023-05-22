@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListContactNameActivity">
+    tools:context=".ListFilmNameActivity">
 
     <ProgressBar
         android:id="@+id/progressbar"
@@ -18,7 +18,7 @@
       />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvkontakname"
+        android:id="@+id/rvFilmName"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

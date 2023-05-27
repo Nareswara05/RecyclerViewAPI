@@ -112,8 +112,7 @@ public class LoginPage extends AppCompatActivity {
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
-                                progressLoading.setVisibility(View.GONE);
-                               loginButton.setEnabled(true);
+
                             }
                             @Override
                             public void onError(ANError error) {

@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 public class MovieModel implements Parcelable {
     private String MovieName;
     private String ReleaseDate;
-
+    private String Popularity;
     private String progressBar;
     private String Language;
     private String Overview;
@@ -21,6 +21,7 @@ public class MovieModel implements Parcelable {
         progressBar = in.readString();
         Language = in.readString();
         Overview = in.readString();
+        Popularity = in.readString();
     }
 
     MovieModel(){
@@ -77,6 +78,7 @@ public class MovieModel implements Parcelable {
         dest.writeString(progressBar);
         dest.writeString(Language);
         dest.writeString(Overview);
+        dest.writeString(Popularity);
     }
 
     public String getLanguage() {
@@ -102,6 +104,14 @@ public class MovieModel implements Parcelable {
 
     public void setPosterPath(String posterPath) {
         PosterPath = posterPath;
+    }
+
+    public String getPopularity() {
+        return Popularity;
+    }
+
+    public void setPopularity(String popularity) {
+        Popularity = popularity;
     }
 }
     

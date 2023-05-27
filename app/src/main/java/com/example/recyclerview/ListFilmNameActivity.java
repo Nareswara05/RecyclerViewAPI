@@ -60,6 +60,7 @@ public class ListFilmNameActivity extends AppCompatActivity implements FilmAdapt
                                 myMovie.setPosterPath(jsonMovie.getString("poster_path"));
                                 myMovie.setLanguage(jsonMovie.getString("vote_average"));
                                 myMovie.setOverview(jsonMovie.getString("overview"));
+                                myMovie.setPopularity(jsonMovie.getString("popularity"));
                                 ListMovie.add(myMovie);
 
                             }
@@ -158,7 +159,7 @@ public class ListFilmNameActivity extends AppCompatActivity implements FilmAdapt
         if (id == R.id.action_logout) {
             // Handle search action
 
-           logoutUser();
+            logoutUser();
 
 
 

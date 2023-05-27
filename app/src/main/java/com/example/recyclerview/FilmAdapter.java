@@ -29,7 +29,7 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.MyViewHolder> 
         public MyViewHolder(View view) {
             super(view);
             tvname = view.findViewById(R.id.tvname);
-            tvphone = view.findViewById(R.id.tvphone);
+            tvphone = view.findViewById(R.id.tvreleasedate);
             img = view.findViewById(R.id.ivLogoTeams);
 
 

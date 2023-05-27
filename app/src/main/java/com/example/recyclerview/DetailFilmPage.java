@@ -14,7 +14,7 @@ public class DetailFilmPage extends AppCompatActivity {
 
     Intent i;
     MovieModel movieModel;
-    TextView tvTeamName, tvteamShort, tvteamDesc;
+    TextView tvTeamName, tvteamShort, tvteamDesc, tvreleasedate, tvpopularity;
     ImageView ivbadgeteams;
 
     @SuppressLint("MissingInflatedId")
@@ -28,11 +28,15 @@ public class DetailFilmPage extends AppCompatActivity {
         System.out.println("my team name : "+ movieModel.getMovieName());
         System.out.println("Team short name" + movieModel.getLanguage());
         tvTeamName = findViewById(R.id.tvteamname);
+        tvpopularity = findViewById(R.id.tvpopularity);
         tvteamShort = findViewById(R.id.tvteamShort);
+        tvreleasedate = findViewById(R.id.tvreleasedate);
         tvteamDesc = findViewById(R.id.tvteamDesc);
         ivbadgeteams = findViewById(R.id.ivbadgeteams);
         tvTeamName.setText(movieModel.getMovieName());
         tvteamShort.setText(movieModel.getLanguage());
+        tvpopularity.setText(movieModel.getPopularity());
         tvteamDesc.setText(movieModel.getOverview());
-            Glide.with(this).load("https://image.tmdb.org/t/p/w500" + movieModel.getPosterPath()).into(ivbadgeteams);
+        tvreleasedate.setText(movieModel.getReleaseDate());
+        Glide.with(this).load("https://image.tmdb.org/t/p/w500" + movieModel.getPosterPath()).into(ivbadgeteams);
     }}

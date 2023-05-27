@@ -1,19 +1,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<!--    <item-->
-<!--        android:id="@+id/action_logout"-->
-<!--        android:title="Search"-->
-<!--        android:icon="@drawable/ic_baseline_logout_24"-->
-<!--        app:showAsAction="ifRoom" />-->
-<!--    <item-->
-<!--        android:id="@+id/rate_app"-->
-<!--        android:title="@string/rate_app"-->
-<!--        android:orderInCategory="100"-->
-<!--        app:showAsAction="showIfRoom" />-->
+    <item
+        android:id="@+id/action_logout"
+        android:title="logout"
+        android:icon="@drawable/ic_baseline_logout_24"
+        app:showAsAction="ifRoom" />
 
-<!--    <item-->
-<!--        android:id="@+id/action_logout"-->
-<!--        android:title="@string/logout"-->
-<!--        android:orderInCategory="100"-->
-<!--        app:showAsAction="showIfRoom" />-->
 </menu>

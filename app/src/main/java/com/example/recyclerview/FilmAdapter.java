@@ -22,7 +22,7 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.MyViewHolder> 
     private MovieAdapterListener Listener;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvname, tvphone, tvdate;
+        public TextView tvname, tvphone;
         public ImageView img;
 
 
@@ -30,7 +30,6 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.MyViewHolder> 
             super(view);
             tvname = view.findViewById(R.id.tvname);
             tvphone = view.findViewById(R.id.tvphone);
-            tvdate = view.findViewById(R.id.tvdate);
             img = view.findViewById(R.id.ivLogoTeams);
 
 
@@ -123,4 +122,3 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.MyViewHolder> 
     }
 
 }
-

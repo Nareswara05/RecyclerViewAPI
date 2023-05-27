@@ -19,8 +19,8 @@ public class MovieModel implements Parcelable {
         ReleaseDate = in.readString();
         setPosterPath(in.readString());
         progressBar = in.readString();
-       Language = in.readString();
-       Overview = in.readString();
+        Language = in.readString();
+        Overview = in.readString();
     }
 
     MovieModel(){
@@ -105,4 +105,3 @@ public class MovieModel implements Parcelable {
     }
 }
     
-

@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -53,18 +54,17 @@ public class ListFilmNameActivity extends AppCompatActivity implements FilmAdapt
                             JSONArray jsonArray = jsonObject.getJSONArray("results");
                             for (int i = 0; i <jsonArray.length() ; i++) {
                                 MovieModel myMovie = new MovieModel();
-                                    JSONObject jsonMovie = jsonArray.getJSONObject(i);
-                                    myMovie.setMovieName(jsonMovie.getString("title"));
-                                    myMovie.setReleaseDate(jsonMovie.getString("release_date"));
-                                    myMovie.setPosterPath(jsonMovie.getString("poster_path"));
-                                    myMovie.setLanguage(jsonMovie.getString("original_language"));
-                                    myMovie.setOverview(jsonMovie.getString("overview"));
-                                    ListMovie.add(myMovie);
+                                JSONObject jsonMovie = jsonArray.getJSONObject(i);
+                                myMovie.setMovieName(jsonMovie.getString("title"));
+                                myMovie.setReleaseDate(jsonMovie.getString("release_date"));
+                                myMovie.setPosterPath(jsonMovie.getString("poster_path"));
+                                myMovie.setLanguage(jsonMovie.getString("vote_average"));
+                                myMovie.setOverview(jsonMovie.getString("overview"));
+                                ListMovie.add(myMovie);
 
                             }
                             rvFilmName = findViewById(R.id.rvFilmName);
                             progressBar = findViewById(R.id.progressbar);
-//                          action_logout = findViewById(R.id.action_logout);
                             adapterListFilm = new FilmAdapter(getApplicationContext(), ListMovie, ListFilmNameActivity.this);
                             RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
                             rvFilmName.setHasFixedSize(true);
@@ -117,7 +117,8 @@ public class ListFilmNameActivity extends AppCompatActivity implements FilmAdapt
     public void onContactSelected(MovieModel myteam) {
         Intent intent = new Intent(ListFilmNameActivity.this, DetailFilmPage.class);
         intent.putExtra("myteam", myteam);
-        startActivity(intent);    }
+        startActivity(intent);
+    }
 
     @Override
     public void onItemLongClick(int position) {
@@ -144,43 +145,46 @@ public class ListFilmNameActivity extends AppCompatActivity implements FilmAdapt
 
 
     }
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.options_menu, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        int id = item.getItemId();
-//
-//        if (id == R.id.action_logout) {
-//            // Handle search action
-//
-//            Intent intent = new Intent(ListContactNameActivity.this, DetailTeamPage.class);
-//            startActivity(intent);
-//
-////            signOut();
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//
-//
-//    }
-//
-//    void signOut(){
-//        gsc.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
-//            @Override
-//            public void onComplete(@NonNull Task<Void> task) {
-//                finish();
-//                startActivity(new Intent(ListContactNameActivity.this, LoginPage.class));
-//            }
-//        });
-//
-//        }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.options_menu, menu);
+        return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_logout) {
+            // Handle search action
+
+           logoutUser();
+
+
+
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+
+
+    }
+
+    private void logoutUser() {
+        // Hapus sesi, hapus token, atau lakukan operasi logout sesuai kebutuhan aplikasi Anda
+        // Misalnya, jika menggunakan otentikasi Google, panggil metode signOut() seperti di bawah ini:
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        GoogleSignInClient googleSignInClient = GoogleSignIn.getClient(this, gso);
+        googleSignInClient.signOut().addOnCompleteListener(task -> {
+            // Aksi setelah logout berhasil dilakukan
+            // Contoh: Kembali ke halaman login
+            startActivity(new Intent(ListFilmNameActivity.this, LoginPage.class));
+            finish();
+        });
+    }
+}
 
 
 

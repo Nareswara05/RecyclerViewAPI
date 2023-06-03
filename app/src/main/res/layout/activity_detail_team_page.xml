@@ -23,7 +23,6 @@
             android:layout_width="200dp"
             android:layout_height="300dp"
             android:adjustViewBounds="true"
-
             />
 
 
@@ -62,9 +61,15 @@
                 android:textStyle="bold"
                 android:text="Rating Movies : " />
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_star_24"
+                />
+
             <TextView
                 android:textAlignment="center"
-                android:id="@+id/tvteamShort"
+                android:id="@+id/tvrating"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
@@ -133,16 +138,48 @@
         </LinearLayout>
 
         <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:paddingStart="10dp"
+                android:paddingEnd="8dp"
+                android:text="Language         :"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/tvteamShort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black" />
+
+
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:paddingTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
 
 
             <TextView
                 android:paddingStart="10dp"
                 android:paddingEnd="8dp"
-                android:text="Overview          :"
+                android:text="Overview Movie         "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18dp"
@@ -151,7 +188,10 @@
 
             <TextView
                 android:id="@+id/tvteamDesc"
-                android:layout_width="match_parent"
+                android:textAlignment="textStart"
+                android:paddingStart="10dp"
+                android:paddingEnd="20px"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/black" />
 

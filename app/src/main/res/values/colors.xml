@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+
+    <color name="_bg__login_ek2_color">#000000</color>
+    <color name="rectangle_1_color">#FFF3E0</color>
+    <color name="ellipse_23_color">#EF8A71</color>
+    <color name="rectangle_182_color">#D9D9D9</color>
+    <color name="email_color">#EE8970</color>
+    <color name="rectangle_181_color">#7FD6AB</color>
+    <color name="login_ek3_color">#EEEEEE</color>
+    <color name="review_film_color">#545D64</color>
+    <color name="rectangle_182_ek1_color">#00ACB5</color>
+    <color name="continue_with_google_color">#3A3F47</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>

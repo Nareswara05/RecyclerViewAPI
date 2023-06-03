@@ -12,6 +12,7 @@ public class MovieModel implements Parcelable {
     private String progressBar;
     private String Language;
     private String Overview;
+    private String Rating;
     private String PosterPath;
 
     protected MovieModel(Parcel in) {
@@ -22,6 +23,7 @@ public class MovieModel implements Parcelable {
         Language = in.readString();
         Overview = in.readString();
         Popularity = in.readString();
+        Rating = in.readString();
     }
 
     MovieModel(){
@@ -79,6 +81,7 @@ public class MovieModel implements Parcelable {
         dest.writeString(Language);
         dest.writeString(Overview);
         dest.writeString(Popularity);
+        dest.writeString(Rating);
     }
 
     public String getLanguage() {
@@ -112,6 +115,14 @@ public class MovieModel implements Parcelable {
 
     public void setPopularity(String popularity) {
         Popularity = popularity;
+    }
+
+    public String getRating() {
+        return Rating;
+    }
+
+    public void setRating(String rating) {
+        Rating = rating;
     }
 }
     

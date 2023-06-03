@@ -1,5 +1,15 @@
 <resources>
-    <string name="app_name">RecyclerView</string>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="your_email_string">Your Email</string>
+    <string name="email_string">Email</string>
+    <string name="forgot_password__string">Forgot Password?</string>
+    <string name="login_ek3_string">Login</string>
+    <string name="password_string">Password</string>
+    <string name="your_password_string">Your Password</string>
+    <string name="review_film_string">review film</string>
+    <string name="or_use_an_account_string">Or use an account</string>
+    <string name="continue_with_google_string">Continue with Google</string>
+    <string name="app_name">List popular movie 2023</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

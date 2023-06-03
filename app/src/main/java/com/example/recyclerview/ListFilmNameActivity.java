@@ -56,9 +56,10 @@ public class ListFilmNameActivity extends AppCompatActivity implements FilmAdapt
                                 MovieModel myMovie = new MovieModel();
                                 JSONObject jsonMovie = jsonArray.getJSONObject(i);
                                 myMovie.setMovieName(jsonMovie.getString("title"));
+                                myMovie.setRating(jsonMovie.getString("vote_average"));
                                 myMovie.setReleaseDate(jsonMovie.getString("release_date"));
                                 myMovie.setPosterPath(jsonMovie.getString("poster_path"));
-                                myMovie.setLanguage(jsonMovie.getString("vote_average"));
+                                myMovie.setLanguage(jsonMovie.getString("original_language"));
                                 myMovie.setOverview(jsonMovie.getString("overview"));
                                 myMovie.setPopularity(jsonMovie.getString("popularity"));
                                 ListMovie.add(myMovie);

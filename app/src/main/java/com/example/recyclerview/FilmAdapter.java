@@ -96,9 +96,8 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull FilmAdapter.MyViewHolder holder, int position) {
         final MovieModel contact = this.listDataMovie.get(position);
-
         holder.tvname.setText(contact.getMovieName());
-        holder.tvphone.setText(contact.getReleaseDate());
+        holder.tvphone.setText(contact.getRating());
         Glide.with(holder.itemView.getContext()).load("https://image.tmdb.org/t/p/w500"+contact.getPosterPath()).into(holder.img);
 
 
